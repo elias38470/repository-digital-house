@@ -1,11 +1,30 @@
-const BigInteger = require('big-integer');
+const express = require('express');
 
-const m = 2023;
-const b = 541; // Tomando el resultado anterior
+const app = express();
+const path = require('path');
+const port = 4000;
 
-const x = BigInteger(b).modInv(m);
+app.use('/public', express.static('public'))
 
-console.log(x.toString());
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/index.html'));
+
+});
+
+
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/register.html'));
+
+});
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/login.html'));
+
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
 
 
 
