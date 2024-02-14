@@ -2,7 +2,8 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
-const port = 4000;
+//puerto q provee render o sino el 4000 que es el local.
+const port = process.env.PORT || 3001;
 
 app.use('/public', express.static('public'))
 
@@ -22,9 +23,9 @@ app.get('/login', (req, res) => {
 
 });
 
-app.listen(port, () => {
+app.listen(port, () => 
     console.log(`Example app listening at http://localhost:${port}`)
-})
+);
 
 
 
