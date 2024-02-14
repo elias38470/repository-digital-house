@@ -276,7 +276,7 @@ footer i {
   margin-bottom: 10px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
 
   .logo-buscar {
     display: flex;
